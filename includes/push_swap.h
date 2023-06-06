@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 14:41:54 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/06/06 17:07:28 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/06/06 20:32:21 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ char	*ft_strndup(const char *s, size_t n);
 char	**ft_split(char const *s, char c);
 int		ft_isdigit(int c);
 int		ft_atoi(const char *nptr);
-void	ft_check(char **stack_a);
+void	ft_convert_digit(char **str);
 
 #endif
