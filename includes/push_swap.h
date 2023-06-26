@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 14:41:54 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/06/26 14:58:59 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/06/26 16:05:08 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,16 @@
 /* ------------functions-----------------*/
 /*---------------------------------------*/
 
-void	ft_operations(void);
-char	*ft_strncpy(char *dst, const char *src, size_t n);
-int		ft_len_word(char *s, char c);
-char	*ft_strndup(const char *s, size_t n);
-char	**ft_split(char const *s, char c);
-int		ft_isdigit(int c);
-int		ft_atoi(const char *nptr);
-void	ft_convert_digit(char **str);
+void				ft_operations(void);
 
+/*---------------------------------------*/
+/* --------------------------------------*/
+/*---------------------------------------*/
+
+typedef struct s_stack
+{
+	int				nbr;
+	struct s_stack	*prev;
+	struct s_stack	*next;
+}					t_stack;
 #endif
