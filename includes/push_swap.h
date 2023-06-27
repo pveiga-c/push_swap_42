@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 14:41:54 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/06/27 08:57:58 by correia          ###   ########.fr       */
+/*   Updated: 2023/06/27 17:23:41 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,15 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+
 /*---------------------------------------*/
 /* ------------Libft---------------------*/
 /*---------------------------------------*/
 
 char				**ft_split(char const *s, char c);
 int					ft_atoi(const char *nptr);
+void				ft_putstr(char *s);
+int					ft_isdigit(int c);
 
 /*---------------------------------------*/
 /* ------------functions-----------------*/
@@ -41,7 +44,15 @@ void				ft_operations(void);
 typedef struct s_stack
 {
 	int				nbr;
-	struct s_stack	*prev;
 	struct s_stack	*next;
 }					t_stack;
+
+/*---------------------------------------*/
+/* ----------------Error-----------------*/
+/*---------------------------------------*/
+void	ft_error_digit(void);
+void	ft_error_size(void);
+void	ft_error_rep(void);
+
+
 #endif

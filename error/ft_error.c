@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   srcs.c                                             :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/06 16:47:02 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/06/27 15:53:44 by pveiga-c         ###   ########.fr       */
+/*   Created: 2023/06/27 16:56:56 by pveiga-c          #+#    #+#             */
+/*   Updated: 2023/06/27 17:22:34 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
-
-t_stack	*ft_stacknew(int nbr)
+void	ft_error_digit(void)
 {
-	t_stack	*new;
+	ft_putstr("Error\n");
+	ft_putstr("Invalid characters\n");
+	exit(0);
+}
 
-	new = malloc(sizeof(t_stack));
-	if (!new)
-		return (NULL);
-	new->nbr = nbr;
-	new->next = NULL;
+void	ft_error_size(void)
+{
+	ft_putstr("Error\n");
+	ft_putstr("Numbers outside the allowed limit\n");
+	exit(0);
+}
+
+void	ft_error_rep(void)
+{
+	ft_putstr("Error\n");
+	ft_putstr("Duplicate characters\n");
+	exit(0);
 }
