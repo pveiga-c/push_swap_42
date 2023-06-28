@@ -6,11 +6,11 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:46:36 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/06/27 16:29:34 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/06/28 16:25:37 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/push_swap.h"
 
 void	ft_putstr(char *s)
 {

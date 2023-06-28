@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 15:48:13 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/04/24 16:01:55 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/06/28 16:25:48 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ A função ft_split tem como objetivo dividir uma string em um array de strings
   caracteres aponta para uma substring da string original.
 */
 
-#include "libft.h"
-#include <stdio.h>
+#include "../includes/push_swap.h"
 
 char	*ft_strncpy(char *dst, const char *src, size_t n)
 {

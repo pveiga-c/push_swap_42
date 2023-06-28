@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 15:26:25 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/04/24 15:30:13 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/06/28 19:01:59 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ O tipo de retorno da função é o valor inteiro correspondente
 à string. 
 */
 
-#include "libft.h"
+#include "../includes/push_swap.h"
 
 int	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	num;
-	int	signal;
+	int		i;
+	long	num;
+	int		signal;
 
 	i = 0;
 	num = 0;
@@ -45,5 +45,7 @@ int	ft_atoi(const char *nptr)
 		num = num + nptr[i] - '0';
 		i++;
 	}
+	if (num < -2147483648 || num > 2147483647)
+		ft_error();
 	return (num * signal);
 }

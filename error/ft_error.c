@@ -6,27 +6,69 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:56:56 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/06/27 17:22:34 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/06/28 19:10:06 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_error_digit(void)
+#include "../includes/push_swap.h"
+
+void	ft_error(void)
 {
 	ft_putstr("Error\n");
-	ft_putstr("Invalid characters\n");
 	exit(0);
 }
 
-void	ft_error_size(void)
+int	ft_isnum(char *args)
 {
-	ft_putstr("Error\n");
-	ft_putstr("Numbers outside the allowed limit\n");
-	exit(0);
+	int	i;
+
+	i = 0;
+	if (args[0] == '-' || args[0] == '+')
+		i++;
+	while (args[i])
+	{
+		if (!ft_isdigit(args[i]))
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
-void	ft_error_rep(void)
+int	ft_check_rep(long tmp, char **args, int i)
 {
-	ft_putstr("Error\n");
-	ft_putstr("Duplicate characters\n");
-	exit(0);
+	i++;
+	while (args[i])
+	{
+		if (tmp == ft_atoi(args[i]))
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+char	**ft_check_argv(int argc, char **argv)
+{
+	int		i;
+	char	**args;
+	long	tmp;
+
+	i = 0;
+	if (argc == 2)
+		args = ft_split(argv[1], ' ');
+	else
+	{
+		i = 1;
+		args = argv;
+	}
+	while (args[i])
+	{
+		tmp = ft_atoi(args[i]);
+		printf("%ld\n", tmp);
+		if (!ft_isnum(args[i]))
+			ft_error();
+		if (ft_check_rep(tmp, args, i))
+			ft_error();
+		i++;
+	}
+	return (args);
 }

@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/12 15:35:34 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/06/28 18:45:24 by pveiga-c         ###   ########.fr       */
+/*   Created: 2023/04/20 15:27:25 by pveiga-c          #+#    #+#             */
+/*   Updated: 2023/06/28 18:12:08 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-A função isdigit em C é usada para determinar se um caractere
-é um dígito numérico. Ela retorna um valor inteiro diferente
-de zero se o caractere for um dígito e zero caso contrário.
-*/
-
 #include "../includes/push_swap.h"
 
-int	ft_isdigit(int c)
+void	ft_putchar(char c)
 {
-	if (c >= 48 && c <= 57)
-	{
-		return (1);
-	}
-	return (0);
+	write(1, &c, 1);
 }
