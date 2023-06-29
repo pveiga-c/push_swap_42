@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:56:56 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/06/28 19:10:06 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/06/29 18:29:33 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,15 @@ int	ft_check_rep(long tmp, char **args, int i)
 	return (0);
 }
 
-char	**ft_check_argv(int argc, char **argv)
+void	ft_check_argv(int argc, char **argv)
 {
 	int		i;
 	char	**args;
 	long	tmp;
 
 	i = 0;
+	if (argc < 2)
+		exit(-1);
 	if (argc == 2)
 		args = ft_split(argv[1], ' ');
 	else
@@ -63,12 +65,10 @@ char	**ft_check_argv(int argc, char **argv)
 	while (args[i])
 	{
 		tmp = ft_atoi(args[i]);
-		printf("%ld\n", tmp);
 		if (!ft_isnum(args[i]))
 			ft_error();
 		if (ft_check_rep(tmp, args, i))
 			ft_error();
 		i++;
 	}
-	return (args);
 }
