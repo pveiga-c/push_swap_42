@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 14:41:54 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/06/29 18:56:22 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/07/03 16:20:11 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char				**ft_split(char const *s, char c);
 /*---------------------------------------*/
 
 void				ft_operations(void);
-void				ft_fill_stack(char **argv, t_stack stack_a);
+void				ft_fill_stack(char **argv, t_stack **stack_a);
 
 /*---------------------------------------*/
 /* ----------------Error-----------------*/
@@ -65,6 +65,7 @@ int					ft_check_rep(long tmp, char **args, int i);
 /*---------------------------------------*/
 
 t_stack				*ft_stacknew(long nbr);
-void				ft_fill_stack(t_stack **stack_a, t_stack *new_node);
+t_stack				*find_tail(t_stack *stack_a);
+void				ft_add_tail(t_stack **stack_a, t_stack *new_node);
 
 #endif

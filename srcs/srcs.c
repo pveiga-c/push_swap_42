@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 16:47:02 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/06/29 18:54:42 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/07/03 16:45:02 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	ft_fill_stack(char **argv, t_stack **stack_a)
 	while (argv)
 	{
 		tmp = ft_atoi(argv[i]);
+		printf("%ld\n", tmp);
 		if (i == 1)
 			*stack_a = ft_stacknew(tmp);
 		else
