@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 14:41:37 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/03 16:45:58 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/07/04 19:34:42 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,28 @@
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
-	t_stack	*stack_b;
-	int		i;
+	//t_stack	*stack_b;
 
-	i = 0;
 	ft_check_argv(argc, argv);
 	stack_a = NULL;
-	stack_b = NULL;
-	ft_fill_stack(argv, &stack_a);
+	*stack_a = ft_fill_stack(argc, argv);
+	//print_list(stack_a);
+	
 }
+/*
+int	get_content(t_stack *elem)
+{
+	return (elem->nbr);
+}
+
+void	print_list(t_stack *a)
+{
+	t_stack	*temp_a;
+
+	temp_a = a;
+	while (temp_a != 0)
+	{
+		printf("%d\n", get_content(temp_a));
+		temp_a = temp_a->next;
+	}
+}*/

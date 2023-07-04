@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stacks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 18:44:18 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/03 15:58:28 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/07/04 19:39:07 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_stack	*ft_stacknew(long nbr)
 {
 	t_stack	*new_node;
 
-	new_node = malloc(sizeof(t_stack));
+	new_node = (t_stack *)malloc(sizeof(t_stack));
 	if (!new_node)
 		return (NULL);
 	new_node->nbr = nbr;
@@ -24,24 +24,27 @@ t_stack	*ft_stacknew(long nbr)
 	return (new_node);
 }
 
-void	ft_add_tail(t_stack **stack_a, t_stack *new_node)
+void	ft_add(t_stack **stack, t_stack *new_node)
 {
 	t_stack	*tail;
 
-	if (!new_node)
-		return ;
-	if (!*stack_a)
+	if (*stack == NULL)
+		*stack = new_node;
+	else
 	{
-		*stack_a = new_node;
-		return ;
+		tail = find_tail(*stack);
+		tail->next = new_node;
 	}
-	tail = find_tail(*stack_a);
-	tail->next = new_node;
 }
 
-t_stack	*find_tail(t_stack *stack_a)
+t_stack	*find_tail(t_stack *tail)
 {
-	while (stack_a && stack_a->next != NULL)
-		stack_a = stack_a->next;
-	return (stack_a);
+	t_stack *last;
+	
+	last = tail;
+	if (!last)
+		return (NULL);
+	while (last->next != NULL)
+		last = last->next;
+	return (last);
 }
