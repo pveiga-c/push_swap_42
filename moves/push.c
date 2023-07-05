@@ -1,50 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations.c                                       :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/06 14:42:37 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/06/06 16:01:08 by pveiga-c         ###   ########.fr       */
+/*   Created: 2023/07/05 17:13:49 by pveiga-c          #+#    #+#             */
+/*   Updated: 2023/07/05 18:32:27 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-/*
-void	ft_operations(void)
+
+void	push(t_stack **src, t_stack **dst)
 {
-	void sa()
-	{
-	}
-	void sb()
-	{
-	}
-	void ss()
-	{
-	}
-	void pa()
-	{
-	}
-	void pb()
-	{
-	}
-	void ra()
-	{
-	}
-	void rb()
-	{
-	}
-	void rr()
-	{
-	}
-	void rra()
-	{
-	}
-	void rrb()
-	{
-	}
-	void rrr()
-	{
-	}
-}*/
+	t_stack	*tmp;
+
+	if (!src)
+		return ;
+	tmp = *src;
+	*src = (*src)->next;
+	tmp->next = *dst;
+	*dst = tmp;
+}
+
+void	ft_pa(t_stack **a, t_stack **b)
+{
+	push(b,a);
+	write(1, "pa\n", 3);
+}
+
+void	ft_pb(t_stack **a, t_stack **b)
+{
+	push(a,b);
+	write(1, "pb\n", 3);
+}

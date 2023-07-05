@@ -1,41 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   reverse_rot.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 14:48:25 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/05 17:30:25 by pveiga-c         ###   ########.fr       */
+/*   Created: 2023/07/05 18:34:59 by pveiga-c          #+#    #+#             */
+/*   Updated: 2023/07/05 18:52:29 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+void	reverse_rot(t_stack **s)
 {
-	t_stack	*stack_a;
+	t_stack	*tmp;
+	t_stack	*last;
 
-	//t_stack	*stack_b;
-	ft_check_argv(argc, argv);
-	stack_a = ft_fill_stack(argc, argv);
-	print_list(stack_a);
-	ft_free_stack(stack_a);
+	if (!*s || !(*s)->next)
+		return ;
+	last = *s;
+	while (last->next->next)
+		last = last->next;
+	tmp = last->next;
+	last->next = NULL;
+	tmp->next = *s;
+	*s = tmp;
 }
 
-int	get_content(t_stack *elem)
+void	ft_rra(t_stack **a)
 {
-	return (elem->nbr);
+	rev_rotate(a);
+	write(1, "rra\n", 4);
 }
 
-void	print_list(t_stack *a)
+void	ft_rrb(t_stack **b)
 {
-	t_stack	*temp_a;
+	rev_rotate(b);
+	write(1, "rrb\n", 4);
+}
 
-	temp_a = a;
-	while (temp_a != 0)
-	{
-		printf("%d\n", get_content(temp_a));
-		temp_a = temp_a->next;
-	}
+void	ft_rrr(t_stack **a, t_stack **b)
+{
+	rev_rotate(a);
+	rev_rotate(b);
+	write(1, "rrr\n", 4);
 }

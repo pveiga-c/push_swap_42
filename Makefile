@@ -1,18 +1,21 @@
 NAME = push_swap
 
-SRCS =  ./srcs/push_swap.c \
-        		./srcs/operations.c \
-				./srcs/srcs.c \
-				./srcs/stacks.c \
-				./error/ft_error.c \
-				./lib/ft_atoi.c \
+SRCS =  ./lib/ft_atoi.c \
 				./lib/ft_isdigit.c \
 				./lib/ft_putstr.c \
 				./lib/ft_split.c \
 				./lib/ft_putchar.c \
 				./lib/ft_putnbr.c \
-	
-                
+				./srcs/push_swap.c \
+        		./srcs/operations.c \
+				./srcs/srcs.c \
+				./srcs/stacks.c \
+				./error/ft_error.c \
+				./moves/swap.c \
+				./moves/push.c \
+				./moves/rotate.c \
+				./moves/reverse_rot.c \
+				                
 OBJS :=$(SRCS:.c=.o)
 
 CFLAGS = -Wall -Wextra -Werror
