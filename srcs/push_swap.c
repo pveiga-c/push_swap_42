@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 14:48:25 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/05 17:30:25 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/07/06 18:57:29 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,31 @@
 
 int	main(int argc, char **argv)
 {
-	t_stack	*stack_a;
+	t_stack	*a;
 
-	//t_stack	*stack_b;
+	t_stack	*b;
 	ft_check_argv(argc, argv);
-	stack_a = ft_fill_stack(argc, argv);
-	print_list(stack_a);
-	ft_free_stack(stack_a);
+	a = ft_fill_stack(argc, argv);
+	b = NULL;
+	print_list(a);
+	ft_is_sorted(a, b);
+	//printf("len = %d\n", ft_stack_len(a));
+	//printf("pos max = %d\n", ft_find_max(a));
+	//printf("pos min = %d\n", ft_find_min(a));
+	//printf("media = %.2f\n", ft_average(a));
+	ft_free_stack(a);
 }
 
-int	get_content(t_stack *elem)
+void	print_list(t_stack *s)
 {
-	return (elem->nbr);
-}
+	t_stack	*temp;
 
-void	print_list(t_stack *a)
-{
-	t_stack	*temp_a;
-
-	temp_a = a;
-	while (temp_a != 0)
+	temp = s;
+	printf("\n-------\n");
+	while (temp != 0)
 	{
-		printf("%d\n", get_content(temp_a));
-		temp_a = temp_a->next;
+		printf("%d -> %d\n", temp->index, temp->nbr);
+		temp = temp->next;
 	}
+	printf("-------\n");
 }

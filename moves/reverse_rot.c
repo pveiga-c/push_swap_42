@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 18:34:59 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/05 18:52:29 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/07/06 15:39:35 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,19 @@ void	reverse_rot(t_stack **s)
 
 void	ft_rra(t_stack **a)
 {
-	rev_rotate(a);
+	reverse_rot(a);
 	write(1, "rra\n", 4);
 }
 
 void	ft_rrb(t_stack **b)
 {
-	rev_rotate(b);
+	reverse_rot(b);
 	write(1, "rrb\n", 4);
 }
 
 void	ft_rrr(t_stack **a, t_stack **b)
 {
-	rev_rotate(a);
-	rev_rotate(b);
+	reverse_rot(a);
+	reverse_rot(b);
 	write(1, "rrr\n", 4);
 }

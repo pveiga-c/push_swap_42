@@ -6,13 +6,13 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 18:44:18 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/05 17:33:57 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/07/06 19:00:07 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_stack	*ft_stacknew(long nbr)
+t_stack	*ft_stacknew(long nbr, int index)
 {
 	t_stack	*new_node;
 
@@ -20,22 +20,23 @@ t_stack	*ft_stacknew(long nbr)
 	if (!new_node)
 		return (NULL);
 	new_node->nbr = nbr;
+	new_node->index = index;
 	new_node->next = NULL;
 	return (new_node);
 }
 
-void	ft_add(t_stack **stack, t_stack *new_node)
+void	ft_add(t_stack **s, t_stack *new_node)
 {
 	t_stack	*tail;
 
-	if (*stack == NULL)
+	if (*s == NULL)
 	{
-		*stack = new_node;
-		(*stack)->next = NULL;
+		*s = new_node;
+		(*s)->next = NULL;
 	}
 	else
 	{
-		tail = find_tail(*stack);
+		tail = find_tail(*s);
 		tail->next = new_node;
 	}
 }
@@ -53,25 +54,25 @@ t_stack	*ft_fill_stack(int argc, char **argv)
 {
 	int		i;
 	long	tmp;
-	t_stack	*stack;
+	t_stack	*s;
 
 	i = 1;
-	stack = NULL;
+	s = NULL;
 	while (argc > i)
 	{
 		tmp = ft_atoi(argv[i]);
-		ft_add(&stack, ft_stacknew(tmp));
+		ft_add(&s, ft_stacknew(tmp, i - 1));
 		i++;
 	}
-	return (stack);
+	return (s);
 }
 
-void	ft_free_stack(t_stack *stack)
+void	ft_free_stack(t_stack *s)
 {
 	t_stack	*current;
 	t_stack	*next;
 
-	stack = current;
+	current = s;
 	while (current != NULL)
 	{
 		next = current->next;

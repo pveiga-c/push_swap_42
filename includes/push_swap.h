@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 14:41:54 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/05 18:55:42 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/07/06 19:02:03 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,12 @@
 # include <string.h>
 # include <unistd.h>
 
-//----------------lists-----------------//
+//------------------define--------------------//
+
+#define MAX 2147483647
+#define MIN -2147483648
+
+//--------------------lists-------------------//
 
 typedef struct s_stack
 {
@@ -29,7 +34,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
-//------------Libft---------------------//
+//------------------Libft---------------------//
 
 void				ft_putnbr(int n);
 int					ft_isdigit(int c);
@@ -38,53 +43,63 @@ void				ft_putchar(char c);
 int					ft_atoi(const char *nptr);
 char				**ft_split(char const *s, char c);
 
-//------------functions-----------------//
+//----------------functions--------------------//
 
 void				ft_operations(void);
-int					get_content(t_stack *elem);
-void				print_list(t_stack *a);
+void				print_list(t_stack *s);
 
-//----------------Error-----------------//
+//-------------------Error--------------------//
 
 void				ft_error(void);
 int					ft_isnum(char *args);
 void				ft_check_argv(int argc, char **argv);
 int					ft_check_rep(long tmp, char **args, int i);
 
-//----------------Stack's---------------//
+//-------------------Stack's------------------//
 
-t_stack				*ft_stacknew(long nbr);
-t_stack				*find_tail(t_stack *stack_a);
-void				ft_free_stack(t_stack *stack);
+t_stack				*ft_stacknew(long nbr, int index);
+t_stack				*find_tail(t_stack *a);
+void				ft_free_stack(t_stack *s);
 t_stack				*ft_fill_stack(int argc, char **argv);
-void				ft_add(t_stack **stack_a, t_stack *new_node);
+void				ft_add(t_stack **a, t_stack *new_node);
 
-
-//------------------swap------------------//
+//---------------------swap---------------------//
 
 void				ft_swap(t_stack **s);
 void				ft_sa(t_stack **a);
 void				ft_sb(t_stack **b);
 void				ft_ss(t_stack **a, t_stack **b);
 
-//------------------push------------------//
+//---------------------push---------------------//
 
-void	push(t_stack **src, t_stack **dst);
-void	ft_pa(t_stack **a, t_stack **b);
-void	ft_pb(t_stack **a, t_stack **b);
+void				push(t_stack **src, t_stack **dst);
+void				ft_pa(t_stack **a, t_stack **b);
+void				ft_pb(t_stack **a, t_stack **b);
 
-//------------------rotate----------------//
+//---------------------rotate-------------------//
 
-void    rotate(t_stack **s);
-void    ft_ra(t_stack **a);
-void    ft_rb(t_stack **b);
-void    ft_rr(t_stack **a, t_stack **b);
+void				rotate(t_stack **s);
+void				ft_ra(t_stack **a);
+void				ft_rb(t_stack **b);
+void				ft_rr(t_stack **a, t_stack **b);
 
-//--------------reverse_rotate------------//
+//-----------------reverse_rotate---------------//
 
-void	reverse_rot(t_stack **s);
-void	ft_rra(t_stack **a);
-void	ft_rrb(t_stack **b);
-void	ft_rrr(t_stack **a, t_stack **b);
+void				reverse_rot(t_stack **s);
+void				ft_rra(t_stack **a);
+void				ft_rrb(t_stack **b);
+void				ft_rrr(t_stack **a, t_stack **b);
+
+//----------------------srcs--------------------//
+
+int					ft_stack_len(t_stack *s);
+int					ft_find_max(t_stack *s);
+int					ft_find_min(t_stack *s);
+float				ft_average(t_stack *s);
+
+//----------------------push--------------------//
+
+void				ft_is_sorted(t_stack *a, t_stack *b);
+void    			ft_sorted(t_stack *a, t_stack *b);
 
 #endif

@@ -7,9 +7,9 @@ SRCS =  ./lib/ft_atoi.c \
 				./lib/ft_putchar.c \
 				./lib/ft_putnbr.c \
 				./srcs/push_swap.c \
-        		./srcs/operations.c \
-				./srcs/srcs.c \
+				./srcs/utils.c \
 				./srcs/stacks.c \
+				./srcs/push.c \
 				./error/ft_error.c \
 				./moves/swap.c \
 				./moves/push.c \
@@ -23,7 +23,7 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME)
        
 $(NAME): $(OBJS)
-	@cc $(CFLAGS) -fsanitize=address $(OBJS) -o $(NAME) 
+	@cc $(CFLAGS) $(OBJS) -o $(NAME) 
 
 clean:
 	@rm -f $(OBJS)
