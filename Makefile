@@ -9,12 +9,12 @@ SRCS =  ./lib/ft_atoi.c \
 				./srcs/push_swap.c \
 				./srcs/utils.c \
 				./srcs/stacks.c \
-				./srcs/push.c \
 				./error/ft_error.c \
 				./moves/swap.c \
 				./moves/push.c \
 				./moves/rotate.c \
 				./moves/reverse_rot.c \
+				./sort_alg/sort.c \
 				                
 OBJS :=$(SRCS:.c=.o)
 

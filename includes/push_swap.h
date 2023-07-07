@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 14:41:54 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/06 19:02:03 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/07/07 18:35:42 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char				**ft_split(char const *s, char c);
 //----------------functions--------------------//
 
 void				ft_operations(void);
-void				print_list(t_stack *s);
+void				print_list(t_stack *a);
 
 //-------------------Error--------------------//
 
@@ -99,7 +99,11 @@ float				ft_average(t_stack *s);
 
 //----------------------push--------------------//
 
-void				ft_is_sorted(t_stack *a, t_stack *b);
-void    			ft_sorted(t_stack *a, t_stack *b);
+void				ft_is_sort(t_stack **a, t_stack **b);
+void    			ft_sort_2(t_stack **a);
+void    			ft_sort_3(t_stack **s);
+void    			ft_sort(t_stack **a, t_stack **b);
+void    			ft_sort_alg(t_stack **a, t_stack **b);
+int		   			ft_find_bf(t_stack *a, int nbr);
 
 #endif
