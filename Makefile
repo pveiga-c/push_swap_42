@@ -14,6 +14,7 @@ SRCS =  ./lib/ft_atoi.c \
 				./moves/push.c \
 				./moves/rotate.c \
 				./moves/reverse_rot.c \
+				./moves/pos.c \
 				./sort_alg/sort.c \
 				                
 OBJS :=$(SRCS:.c=.o)

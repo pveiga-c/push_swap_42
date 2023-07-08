@@ -6,13 +6,13 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 18:52:15 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/07 19:01:41 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/07/08 17:51:15 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_is_sort(t_stack **a, t_stack **b)
+void	ft_sort_stack(t_stack **a, t_stack **b)
 {
     if(ft_stack_len(*a) == 2)
         ft_sort_2(a);
@@ -57,30 +57,47 @@ void    ft_sort_3(t_stack **a)
             ft_rra(a); 
         return ;   
 }
-// dividir a stack A em 2 e passar para a stack B os valores abaixo da media dos mesmos.
+
 void    ft_sort(t_stack **a, t_stack **b)
 {
-    int m;
-    int bf;
-
-    m = ft_stack_len(*a) / 2;
-    while(ft_stack_len(*a) > m)
-    {
-        if((*a)->nbr < ft_average(*a))
-            ft_pb(a, b);
-        else
-            ft_ra(a);    
-    }
-    bf = ft_find_bf(*a, 6);
-    printf("bf = %d\n", bf);
-    /*
+    
+    ft_split_stack(a, b);
     while(ft_stack_len(*b) > 0)
         ft_sort_alg(a, b);
-        */
+    printf("nn %d\n", ft_find_min(*a));
+    ft_move_top_a(a, ft_find_pos(*a, ft_find_min(*a)));
 }
+
 void    ft_sort_alg(t_stack **a, t_stack **b)
 {
-    ft_find_bf(*a, (*b)->nbr);
+    t_stack *tmp_b;
+    int cost;
+    int index_a;
+    int index_b;
+    
+    tmp_b = *b;
+    cost = MAX;
+    index_a = 0;
+    index_b = 0; 
+    
+    printf("len = %d", ft_stack_len(*b));
+        while(tmp_b != NULL)
+        {
+            tmp_b->bff = ft_find_bf(*a, tmp_b->nbr);
+            if(ft_find_cost(a, b, tmp_b->nbr, tmp_b->bff) < cost)
+            {
+                cost = ft_find_cost(a, b, tmp_b->nbr, tmp_b->bff);
+                index_a = ft_find_pos(*a, tmp_b->bff);
+                index_b = ft_find_pos(*b, tmp_b->nbr);
+            }
+            tmp_b = tmp_b->next;
+        }
+        ft_move_top_a(a, index_a);
+        ft_move_top_b(b, index_b);
+       // print_list(*b);
+        ft_pa(b, a);
+      //  print_list(*b);
+       // print_list(*a);
 }
 
 int    ft_find_bf(t_stack *a, int nbr)
@@ -90,16 +107,31 @@ int    ft_find_bf(t_stack *a, int nbr)
     int bff;
     
     bf = MAX;
-     while(a != NULL)
-    {
-        temp = a->nbr - nbr;
-        if(temp > 0 && temp < bf)
+    while (a != NULL)
         {
-            bf = temp;
-            bff = a->nbr;
+            temp = a->nbr - nbr;
+            if(temp > 0 && temp < bf)
+            {
+                bf = temp;
+                bff = a->nbr;
+            }
+           // printf("%d - %d = %d\n", a->nbr, nbr, temp);
+            a = a->next;  
         }
-        a = a->next;    
-    }
-    return (bff);
+        printf("\n");
+        return (bff);
 }
 
+void    ft_split_stack(t_stack **a, t_stack **b)
+{
+    int m;
+
+    m = ft_stack_len(*a) / 2;
+    while(ft_stack_len(*a) > m)
+    {
+        if((*a)->nbr < ft_average(*a))
+            ft_pb(a, b);
+        else
+            ft_ra(a);    
+    }
+}

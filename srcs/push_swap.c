@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 14:48:25 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/07 18:18:44 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/07/08 17:28:39 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ int	main(int argc, char **argv)
 	ft_check_argv(argc, argv);
 	a = ft_fill_stack(argc, argv);
 	b = NULL;
-	printf("\nStack A\n");
+	//printf("\nStack A\n");
+	//print_list(a);
+	ft_sort_stack(&a, &b);
+	//printf("\nStack A\n");
 	print_list(a);
-	ft_is_sort(&a, &b);
-	printf("\nStack A\n");
-	print_list(a);
-	printf("\nStack b\n");
-	print_list(b);
+	//printf("\nStack b\n");
+	//print_list(b);
 	//printf("len = %d\n", ft_stack_len(a));
 	//printf("pos max = %d\n", ft_find_max(a));
 	//printf("pos min = %d\n", ft_find_min(a));

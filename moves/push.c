@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 17:13:49 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/07 17:58:42 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/07/08 17:42:00 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	push(t_stack **src, t_stack **dst)
 	*dst = tmp;
 }
 
-void	ft_pa(t_stack **a, t_stack **b)
+void	ft_pa(t_stack **b, t_stack **a)
 {
 	push(b, a);
 	write(1, "pa\n", 3);

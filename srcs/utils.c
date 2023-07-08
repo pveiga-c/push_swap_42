@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 16:47:02 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/07 17:05:26 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/07/08 17:53:21 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	ft_find_min(t_stack *s)
 		s = s->next;
 					
 	}
-	return (pos);
+	return (num_min);
 }
 
 float	ft_average(t_stack *s)

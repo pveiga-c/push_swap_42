@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 14:41:54 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/07 18:35:42 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/07/08 17:27:10 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ typedef struct s_stack
 {
 	int				nbr;
 	int				index;
+	int				bff;
+	int				cost;
 	struct s_stack	*next;
 }					t_stack;
 
@@ -99,11 +101,16 @@ float				ft_average(t_stack *s);
 
 //----------------------push--------------------//
 
-void				ft_is_sort(t_stack **a, t_stack **b);
+void				ft_sort_stack(t_stack **a, t_stack **b);
 void    			ft_sort_2(t_stack **a);
 void    			ft_sort_3(t_stack **s);
 void    			ft_sort(t_stack **a, t_stack **b);
 void    			ft_sort_alg(t_stack **a, t_stack **b);
-int		   			ft_find_bf(t_stack *a, int nbr);
+int    				ft_find_bf(t_stack *a, int nbr);
+void    			ft_split_stack(t_stack **a, t_stack **b);
+int		   			ft_find_cost(t_stack **a, t_stack **b, int nbr, int bff);
+int 				ft_find_pos(t_stack *s, int n);
+void    			ft_move_top_a(t_stack **a, int index);
+void   				ft_move_top_b(t_stack **b, int index);
 
 #endif
