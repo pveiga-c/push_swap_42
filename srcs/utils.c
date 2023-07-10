@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 16:47:02 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/10 15:13:42 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/07/10 18:58:48 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,7 @@ int	ft_find_min(t_stack *s)
 	while (s != NULL)
 	{
 		if (s->nbr < num_min)
-		{
 			num_min = s->nbr;
-		}
 		s = s->next;
 	}
 	return (num_min);

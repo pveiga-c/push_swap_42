@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 14:41:54 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/10 15:10:07 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/07/10 19:54:51 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,5 +112,9 @@ int					ft_find_cost(t_stack **a, t_stack **b, int nbr, int bff);
 int					ft_find_pos(t_stack *s, int n);
 void				ft_move_top_a(t_stack **a, int index);
 void				ft_move_top_b(t_stack **b, int index);
+void				ft_sort_5(t_stack **a, t_stack **b);
+void				ft_sort_4(t_stack **a, t_stack **b);
+int					ft_find_min_4(t_stack *s);
+int					ft_find_min_5(t_stack *s);
 
 #endif

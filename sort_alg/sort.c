@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 18:52:15 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/10 16:08:29 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/07/10 20:01:06 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 void	ft_sort_stack(t_stack **a, t_stack **b)
 {
-	if (ft_stack_len(*a) == 2)
-		ft_sort_2(a);
+	if (ft_stack_len(*a) == 5)
+		ft_sort_5(a, b);
+	else if (ft_stack_len(*a) == 4)
+		ft_sort_4(a, b);
 	else if (ft_stack_len(*a) == 3)
 		ft_sort_3(a);
 	else
@@ -49,8 +51,8 @@ void	ft_sort_3(t_stack **a)
 		ft_ra(a);
 	else if (f > s && f > t && s > t)
 	{
-		ft_ra(a);
-		ft_ra(a);
+		ft_sa(a);
+		ft_rra(a);
 	}
 	else if (f < s && f > t)
 		ft_rra(a);
@@ -63,7 +65,7 @@ void	ft_sort(t_stack **a, t_stack **b)
 	while (ft_stack_len(*b) > 0)
 		ft_sort_alg(a, b);
 	ft_move_top_a(a, ft_find_pos(*a, ft_find_min(*a)));
-	}
+}
 
 void	ft_sort_alg(t_stack **a, t_stack **b)
 {
