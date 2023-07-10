@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 18:52:15 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/08 17:51:15 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/07/08 22:46:17 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,13 @@ void    ft_sort(t_stack **a, t_stack **b)
 {
     
     ft_split_stack(a, b);
+    print_list(*a);
     while(ft_stack_len(*b) > 0)
         ft_sort_alg(a, b);
-    printf("nn %d\n", ft_find_min(*a));
+    printf("nn %d\n", ft_find_pos(*a, ft_find_min(*a)));
+    print_list(*a);
     ft_move_top_a(a, ft_find_pos(*a, ft_find_min(*a)));
+     print_list(*a);
 }
 
 void    ft_sort_alg(t_stack **a, t_stack **b)
