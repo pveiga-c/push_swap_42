@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 18:52:15 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/10 20:01:06 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/07/10 21:05:01 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,12 +117,12 @@ int	ft_find_bf(t_stack *a, int nbr)
 
 void	ft_split_stack(t_stack **a, t_stack **b)
 {
-	while (ft_stack_len(*a) > 3)
+	while (ft_stack_len(*a) > 5)
 	{
 		if ((*a)->nbr < ft_average(*a))
 			ft_pb(a, b);
 		else
 			ft_ra(a);
 	}
-	ft_sort_3(a);
+	ft_sort_5(a, b);
 }
