@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 14:48:25 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/08 22:41:34 by correia          ###   ########.fr       */
+/*   Updated: 2023/07/10 16:10:22 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,16 @@
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
-
 	t_stack	*b;
+
 	ft_check_argv(argc, argv);
 	a = ft_fill_stack(argc, argv);
 	b = NULL;
-	printf("\nStack A\n");
+	printf("stack a (antes)\n");
 	print_list(a);
 	ft_sort_stack(&a, &b);
-	//printf("\nStack A\n");
+	printf("stack a (depois)\n");
 	print_list(a);
-	//printf("\nStack b\n");
-	//print_list(b);
-	//printf("len = %d\n", ft_stack_len(a));
-	//printf("pos max = %d\n", ft_find_max(a));
-	//printf("pos min = %d\n", ft_find_min(a));
-	//printf("media = %.2f\n", ft_average(a));
 	ft_free_stack(a);
 }
 
