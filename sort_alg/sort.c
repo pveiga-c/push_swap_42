@@ -6,7 +6,7 @@
 /*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 18:52:15 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/10 21:05:01 by correia          ###   ########.fr       */
+/*   Updated: 2023/07/11 09:03:33 by correia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	ft_sort_3(t_stack **a)
 void	ft_sort(t_stack **a, t_stack **b)
 {
 	ft_split_stack(a, b);
+    ft_sort_5(a, b);
 	while (ft_stack_len(*b) > 0)
 		ft_sort_alg(a, b);
 	ft_move_top_a(a, ft_find_pos(*a, ft_find_min(*a)));
@@ -124,5 +125,4 @@ void	ft_split_stack(t_stack **a, t_stack **b)
 		else
 			ft_ra(a);
 	}
-	ft_sort_5(a, b);
 }
