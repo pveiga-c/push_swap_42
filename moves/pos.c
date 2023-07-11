@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 16:16:33 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/10 15:59:42 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/07/11 15:32:07 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,15 @@ int	ft_find_cost(t_stack **a, t_stack **b, int nbr, int bff)
 	int	cost;
 
 	cost = 0;
-	if (ft_find_pos(*b, nbr) <= ft_stack_len(*b) / 2)
+	if ((ft_find_pos(*b, nbr) <= ft_stack_len(*b) / 2))
 		cost += ft_find_pos(*b, nbr);
 	else if (ft_find_pos(*b, nbr) > ft_stack_len(*b) / 2)
-		cost = +ft_stack_len(*b) - ft_find_pos(*b, nbr);
-	if (ft_find_pos(*a, bff) <= ft_stack_len(*a) / 2)
+		cost += ft_stack_len(*b) - ft_find_pos(*b, nbr);
+	if ((ft_find_pos(*a, bff)) <= ft_stack_len(*a) / 2)
 		cost += ft_find_pos(*a, bff);
-	else if (ft_find_pos(*a, bff) > ft_stack_len(*a) / 2)
-		cost = +ft_stack_len(*a) - ft_find_pos(*a, bff);
+	else if (ft_find_pos(*a, bff) >= ft_stack_len(*a) / 2)
+		cost += ft_stack_len(*a) - ft_find_pos(*a, bff);
+	(*b)->cost = cost;
 	return (cost);
 }
 
@@ -75,7 +76,7 @@ void	ft_move_top_b(t_stack **b, int index)
 	int	i;
 
 	i = 0;
-	if (index <=(ft_stack_len(*b) / 2))
+	if (index <= (ft_stack_len(*b) / 2))
 	{
 		while (i < index)
 		{

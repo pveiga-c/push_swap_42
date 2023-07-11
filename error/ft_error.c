@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:56:56 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/05 16:36:21 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/07/11 17:17:32 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_isnum(char *args)
 	int	i;
 
 	i = 0;
-	if (args[0] == '-' || args[0] == '+')
+	if ((args[0] == '-' || args[0] == '+') && (args[1] > 47 && args[1] < 58))
 		i++;
 	while (args[i])
 	{
@@ -52,16 +52,10 @@ void	ft_check_argv(int argc, char **argv)
 	char	**args;
 	long	tmp;
 
-	i = 0;
+	i = 1;
 	if (argc < 2)
 		exit(-1);
-	if (argc == 2)
-		args = ft_split(argv[1], ' ');
-	else
-	{
-		i = 1;
-		args = argv;
-	}
+	args = argv;
 	while (args[i])
 	{
 		tmp = ft_atoi(args[i]);

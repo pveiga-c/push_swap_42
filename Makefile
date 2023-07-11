@@ -16,6 +16,8 @@ SRCS =  ./lib/ft_atoi.c \
 				./moves/reverse_rot.c \
 				./moves/pos.c \
 				./sort_alg/sort.c \
+				./sort_alg/sort_2.c \
+				./sort_alg/sort_3.c \
 				./sort_alg/sort_4.c \
 				./sort_alg/sort_5.c \
 				                
@@ -26,7 +28,7 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME)
        
 $(NAME): $(OBJS)
-	@cc $(CFLAGS) $(OBJS) -o $(NAME) 
+	@cc $(CFLAGS) $(OBJS) -g -fsanitize=address -o $(NAME) 
 
 clean:
 	@rm -f $(OBJS)
@@ -37,4 +39,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all tester clean fclean runner re
+.PHONY: all clean fclean runner re

@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   sort_3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/12 15:35:34 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/11 17:15:18 by pveiga-c         ###   ########.fr       */
+/*   Created: 2023/07/11 17:40:27 by pveiga-c          #+#    #+#             */
+/*   Updated: 2023/07/11 17:40:57 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-A função isdigit em C é usada para determinar se um caractere
-é um dígito numérico. Ela retorna um valor inteiro diferente
-de zero se o caractere for um dígito e zero caso contrário.
-*/
-
 #include "../includes/push_swap.h"
 
-int	ft_isdigit(int c)
+void	ft_sort_3(t_stack **a)
 {
-	if (c >= 48 && c <= 57)
+	int	f;
+	int	s;
+	int	t;
+
+	f = (*a)->nbr;
+	s = (*a)->next->nbr;
+	t = (*a)->next->next->nbr;
+	if (f > s && f < t)
+		ft_sa(a);
+	else if (f < s && f < t && s > t)
 	{
-		return (1);
+		ft_rra(a);
+		ft_sa(a);
 	}
-	return (0);
+	else if (f > s && f > t && s < t)
+		ft_ra(a);
+	else if (f > s && f > t && s > t)
+	{
+		ft_sa(a);
+		ft_rra(a);
+	}
+	else if (f < s && f > t)
+		ft_rra(a);
+	return ;
 }

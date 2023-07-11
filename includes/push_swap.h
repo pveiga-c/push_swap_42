@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 14:41:54 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/10 19:54:51 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/07/11 16:28:47 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,5 +116,6 @@ void				ft_sort_5(t_stack **a, t_stack **b);
 void				ft_sort_4(t_stack **a, t_stack **b);
 int					ft_find_min_4(t_stack *s);
 int					ft_find_min_5(t_stack *s);
+void				ft_is_sort(t_stack *a);
 
 #endif

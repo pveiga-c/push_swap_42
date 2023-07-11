@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: correia <correia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 18:52:15 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/11 09:03:33 by correia          ###   ########.fr       */
+/*   Updated: 2023/07/11 17:45:17 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,52 +20,12 @@ void	ft_sort_stack(t_stack **a, t_stack **b)
 		ft_sort_4(a, b);
 	else if (ft_stack_len(*a) == 3)
 		ft_sort_3(a);
+	else if (ft_stack_len(*a) == 2)
+		ft_sort_2(a);
+	else if (ft_stack_len(*a) == 1)
+		return ;
 	else
 		ft_sort(a, b);
-}
-
-void	ft_sort_2(t_stack **a)
-{
-	if ((*a)->nbr > (*a)->next->nbr)
-		ft_sa(a);
-	return ;
-}
-
-void	ft_sort_3(t_stack **a)
-{
-	int	f;
-	int	s;
-	int	t;
-
-	f = (*a)->nbr;
-	s = (*a)->next->nbr;
-	t = (*a)->next->next->nbr;
-	if (f > s && f < t)
-		ft_sa(a);
-	else if (f < s && f < t)
-	{
-		ft_rra(a);
-		ft_sa(a);
-	}
-	else if (f > s && f > t && s < t)
-		ft_ra(a);
-	else if (f > s && f > t && s > t)
-	{
-		ft_sa(a);
-		ft_rra(a);
-	}
-	else if (f < s && f > t)
-		ft_rra(a);
-	return ;
-}
-
-void	ft_sort(t_stack **a, t_stack **b)
-{
-	ft_split_stack(a, b);
-    ft_sort_5(a, b);
-	while (ft_stack_len(*b) > 0)
-		ft_sort_alg(a, b);
-	ft_move_top_a(a, ft_find_pos(*a, ft_find_min(*a)));
 }
 
 void	ft_sort_alg(t_stack **a, t_stack **b)
@@ -77,8 +37,6 @@ void	ft_sort_alg(t_stack **a, t_stack **b)
 
 	tmp_b = *b;
 	cost = MAX;
-	index_a = 0;
-	index_b = 0;
 	while (tmp_b != NULL)
 	{
 		tmp_b->bff = ft_find_bf(*a, tmp_b->nbr);
@@ -94,7 +52,6 @@ void	ft_sort_alg(t_stack **a, t_stack **b)
 	ft_move_top_b(b, index_b);
 	ft_pa(b, a);
 }
-
 
 int	ft_find_bf(t_stack *a, int nbr)
 {

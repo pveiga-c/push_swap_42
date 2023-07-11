@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 15:26:25 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/06/28 19:01:59 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/07/11 18:28:02 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,13 @@ int	ft_atoi(const char *nptr)
 		signal = -1;
 		i++;
 	}
-	while (nptr[i] >= 48 && nptr[i] <= 57)
-	{
-		num = num * 10;
-		num = num + nptr[i] - '0';
-		i++;
-	}
-	if (num < -2147483648 || num > 2147483647)
+	if (!nptr[i])
 		ft_error();
+	while (nptr[i] && (nptr[i]))
+	{
+		if ((num * signal) < MIN || (num * signal) > MAX)
+			ft_error();	
+		num = (num * 10) + nptr[i++] - '0';
+	}
 	return (num * signal);
 }
