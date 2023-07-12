@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 14:48:25 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/12 15:43:43 by pveiga-c         ###   ########.fr       */
+/*   Created: 2023/04/12 15:35:34 by pveiga-c          #+#    #+#             */
+/*   Updated: 2023/07/11 17:15:18 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+A função isdigit em C é usada para determinar se um caractere
+é um dígito numérico. Ela retorna um valor inteiro diferente
+de zero se o caractere for um dígito e zero caso contrário.
+*/
+
 #include "../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+int	ft_isdigit(int c)
 {
-	t_stack	*a;
-	t_stack	*b;
-
-	ft_check_argv(argc, argv);
-	a = ft_fill_stack(argc, argv);
-	b = NULL;
-	ft_is_sort(a);
-	ft_sort_stack(&a, &b);
-	ft_free_stack(a);
-	return (0);
-}
-
-void	print_list(t_stack *s)
-{
-	t_stack	*temp;
-
-	temp = s;
-	printf("\n-------\n");
-	while (temp != 0)
+	if (c >= 48 && c <= 57)
 	{
-		printf("  %d\n", temp->nbr);
-		temp = temp->next;
+		return (1);
 	}
-	printf("-------\n");
+	return (0);
 }

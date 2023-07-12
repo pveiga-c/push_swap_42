@@ -6,13 +6,13 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 18:44:18 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/06 19:00:07 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/07/12 15:51:51 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_stack	*ft_stacknew(long nbr, int index)
+t_stack	*ft_stacknew(long nbr)
 {
 	t_stack	*new_node;
 
@@ -20,7 +20,6 @@ t_stack	*ft_stacknew(long nbr, int index)
 	if (!new_node)
 		return (NULL);
 	new_node->nbr = nbr;
-	new_node->index = index;
 	new_node->next = NULL;
 	return (new_node);
 }
@@ -61,7 +60,7 @@ t_stack	*ft_fill_stack(int argc, char **argv)
 	while (argc > i)
 	{
 		tmp = ft_atoi(argv[i]);
-		ft_add(&s, ft_stacknew(tmp, i - 1));
+		ft_add(&s, ft_stacknew(tmp));
 		i++;
 	}
 	return (s);

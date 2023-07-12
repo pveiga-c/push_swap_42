@@ -1,57 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/06 16:47:02 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/12 15:44:48 by pveiga-c         ###   ########.fr       */
+/*   Created: 2023/04/20 15:49:28 by pveiga-c          #+#    #+#             */
+/*   Updated: 2023/06/28 18:10:09 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ft_stack_len(t_stack *s)
+void	ft_putnbr(int n)
 {
-	int	len;
-
-	len = 0;
-	while (s != NULL)
+	if (n == -2147483648)
 	{
-		len++;
-		s = s->next;
+		ft_putstr("-2147483648");
+		return ;
 	}
-	return (len);
-}
-
-int	ft_find_min(t_stack *s)
-{
-	int	num_min;
-
-	num_min = MAX;
-	while (s != NULL)
+	if (n < 0)
 	{
-		if (s->nbr < num_min)
-			num_min = s->nbr;
-		s = s->next;
+		ft_putchar('-');
+		n *= -1;
 	}
-	return (num_min);
-}
-
-float	ft_average(t_stack *s)
-{
-	int		i;
-	float	avg;
-
-	i = 0;
-	avg = 0;
-	while (s != NULL)
+	if (n > 9)
 	{
-		avg += s->nbr;
-		i++;
-		s = s->next;
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
 	}
-	avg = avg / i;
-	return (avg);
+	else
+	{
+		ft_putchar(n + '0');
+	}
 }

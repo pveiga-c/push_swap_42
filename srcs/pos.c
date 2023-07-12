@@ -6,7 +6,7 @@
 /*   By: pveiga-c <pveiga-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 16:16:33 by pveiga-c          #+#    #+#             */
-/*   Updated: 2023/07/11 15:32:07 by pveiga-c         ###   ########.fr       */
+/*   Updated: 2023/07/12 16:06:53 by pveiga-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_find_cost(t_stack **a, t_stack **b, int nbr, int bff)
 		cost += ft_stack_len(*b) - ft_find_pos(*b, nbr);
 	if ((ft_find_pos(*a, bff)) <= ft_stack_len(*a) / 2)
 		cost += ft_find_pos(*a, bff);
-	else if (ft_find_pos(*a, bff) >= ft_stack_len(*a) / 2)
+	else if (ft_find_pos(*a, bff) > ft_stack_len(*a) / 2)
 		cost += ft_stack_len(*a) - ft_find_pos(*a, bff);
 	(*b)->cost = cost;
 	return (cost);

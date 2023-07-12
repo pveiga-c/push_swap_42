@@ -1,11 +1,11 @@
 NAME = push_swap
 
-SRCS =  ./lib/ft_atoi.c \
-				./lib/ft_isdigit.c \
-				./lib/ft_putstr.c \
-				./lib/ft_split.c \
-				./lib/ft_putchar.c \
-				./lib/ft_putnbr.c \
+SRCS =  ./libft/ft_atoi.c \
+				./libft/ft_isdigit.c \
+				./libft/ft_putstr.c \
+				./libft/ft_putchar.c \
+				./libft/ft_putnbr.c \
+				./srcs/pos.c \
 				./srcs/push_swap.c \
 				./srcs/utils.c \
 				./srcs/stacks.c \
@@ -14,7 +14,6 @@ SRCS =  ./lib/ft_atoi.c \
 				./moves/push.c \
 				./moves/rotate.c \
 				./moves/reverse_rot.c \
-				./moves/pos.c \
 				./sort_alg/sort.c \
 				./sort_alg/sort_2.c \
 				./sort_alg/sort_3.c \
@@ -39,4 +38,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean runner re
+.PHONY: all clean fclean re
